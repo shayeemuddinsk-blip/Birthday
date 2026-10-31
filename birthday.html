@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080807">
+<title>For My Wife, Hakima Khatun ❤️</title>
+<style>
+:root{--gold:#e2bd72;--gold-light:#fff0c4;--gold-dark:#9b7136;--bg:#080807;--panel:#17130e;--text:#f5ead5;--muted:#c8b99e}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Georgia,"Noto Serif Bengali","Nirmala UI",serif}
+body{min-height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 12%,#392918 0,#171109 32%,#080807 75%)}
+button{font:inherit}
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 10% 80%,#9c6d2820,transparent 30%),radial-gradient(circle at 90% 20%,#d6ad5420,transparent 27%)}
+.app{position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column}
+.topbar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid #d6b36a25;background:#08080755;backdrop-filter:blur(12px)}
+.brand{font:10px Arial,sans-serif;letter-spacing:.2em;color:var(--gold)}
+.brand-note{font:9px Arial,sans-serif;color:#b8a581;letter-spacing:.18em}
+.progress{display:none}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:18px 17px 22px;min-height:0}
+.scene{width:min(760px,100%);max-height:calc(100svh - 112px);overflow:auto;text-align:center;scrollbar-width:none;animation:sceneIn .75s both}
+.scene::-webkit-scrollbar{display:none}
+@keyframes sceneIn{from{opacity:0;transform:translateY(18px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+.kicker{font:10px Arial,sans-serif;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+h1,h2{font-weight:500;color:var(--gold-light);line-height:1.35;margin:0 0 17px;text-shadow:0 0 30px #d8aa5540}
+h1{font-size:clamp(36px,8vw,72px)}
+h2{font-size:clamp(27px,6vw,43px)}
+p{font-size:clamp(15px,3.8vw,18px);line-height:2;color:#e0d3bd;margin:0 auto 18px;max-width:630px}
+.name{font-size:clamp(19px,4.5vw,28px);letter-spacing:.08em;color:var(--gold);margin:10px 0}
+.rule{width:92px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.ornament{font-size:27px;color:var(--gold);margin:14px}
+.btnrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.btnrow.navrow{margin:30px auto 8px;gap:9px}
+.btnrow.navrow .btn{min-height:40px;padding:9px 17px;font-size:13px;opacity:.88}
+.btn{border:1px solid var(--gold);border-radius:999px;padding:13px 24px;min-height:48px;background:linear-gradient(135deg,#f0d28e,#a87935);color:#171108;cursor:pointer;font-weight:bold;box-shadow:0 8px 30px #c99b4930;transition:.28s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 36px #c99b4960}
+.btn.secondary{background:#110e09;color:var(--gold-light);box-shadow:none}
+.hint{font:11px Arial,sans-serif;letter-spacing:.08em;color:#9f927b;margin-top:16px}
+.frame{border:1px solid #c49b5555;border-radius:24px;padding:clamp(23px,5vw,42px);background:linear-gradient(145deg,#211a10ed,#0d0c0bf2);box-shadow:0 25px 80px #0009;position:relative}
+.frame:before{content:"";position:absolute;inset:8px;border:1px solid #d8b46a20;border-radius:17px;pointer-events:none}
+.gift-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:25px auto;max-width:560px}
+.gift{min-height:150px;border:1px solid #b58a4c88;border-radius:18px;background:linear-gradient(145deg,#2b2113,#100d09);color:var(--gold-light);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;cursor:pointer;transition:.35s;box-shadow:0 12px 32px #0007;position:relative;overflow:hidden}
+.gift:hover{transform:translateY(-5px);box-shadow:0 15px 35px #b68a3b35}
+.gift .emoji{font-size:37px;filter:drop-shadow(0 0 12px #e8bd6a70)}
+.gift small{font:10px Arial,sans-serif;letter-spacing:.17em;color:#c9aa6c}
+.gift b{font-size:16px;font-weight:500}
+.gift.opened{border-color:#f2d99c;background:linear-gradient(145deg,#49371c,#171108)}
+.gift.opened:after{content:"✓";position:absolute;top:9px;right:13px;color:#f4d88f}
+.modal{position:fixed;inset:0;z-index:10;display:none;align-items:center;justify-content:center;padding:20px;background:#030303d9;backdrop-filter:blur(9px)}
+.modal.show{display:flex;animation:fade .35s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modalbox{width:min(620px,100%);max-height:85svh;overflow:auto;border:1px solid #d8b46a88;border-radius:23px;background:radial-gradient(ellipse at 50% 0,#3b2b17,#100e0b 65%);padding:28px 22px;box-shadow:0 0 0 1px #d8b46a20,0 0 65px #d6a84b40,0 30px 90px #000;animation:glowOpen .8s both;text-align:center}
+@keyframes glowOpen{0%{opacity:0;transform:scale(.78) translateY(25px);filter:brightness(2) blur(8px)}65%{opacity:1;transform:scale(1.03);filter:brightness(1.2)}100%{transform:scale(1);filter:none}}
+.modalbox .lettertext{text-align:left;white-space:pre-line;line-height:2.05;font-size:16px;color:#eee1ca}
+.modalbox h2{font-size:28px}
+.close{margin-top:22px}
+.envelope{width:170px;height:112px;margin:26px auto 18px;position:relative;background:linear-gradient(145deg,#d9b46d,#8d632c);border-radius:5px;box-shadow:0 0 35px #d5a94b50;cursor:pointer;transition:.4s}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 49%,#6f4a22 50%,transparent 51%),linear-gradient(215deg,transparent 49%,#8b612e 50%,transparent 51%);z-index:2}
+.envelope:after{content:"";position:absolute;left:0;right:0;top:0;margin:auto;width:0;height:0;border-left:85px solid transparent;border-right:85px solid transparent;border-top:64px solid #f0d18c;transform-origin:top;transition:.7s;z-index:3}
+.envelope.open:after{transform:rotateX(180deg);opacity:.25}
+.seal{position:absolute;z-index:4;left:calc(50% - 16px);top:42px;width:32px;height:32px;border-radius:50%;background:#4a1713;color:#f7d88e;display:grid;place-items:center;box-shadow:0 0 12px #0007}
+.cake-wrap{width:190px;height:160px;margin:18px auto;position:relative}
+.cake{position:absolute;bottom:10px;left:15px;width:160px;height:78px;border-radius:12px 12px 18px 18px;background:linear-gradient(#e9c77e 0 18%,#6c3d23 18%);box-shadow:0 12px 22px #0008}
+.cake:before{content:"";position:absolute;top:-14px;left:0;width:160px;height:28px;border-radius:50%;background:#f2d99c;border-bottom:7px solid #b17b3d}
+.candle{position:absolute;z-index:2;bottom:82px;left:89px;width:12px;height:42px;border-radius:4px;background:repeating-linear-gradient(135deg,#f7e6bc 0 6px,#a87a37 6px 10px)}
+.flame{position:absolute;bottom:122px;left:87px;width:16px;height:23px;background:radial-gradient(ellipse at 50% 65%,#fff7bc 0 15%,#f5a623 42%,#d34a19 75%,transparent 78%);border-radius:50%;filter:drop-shadow(0 0 12px #ffb52c);animation:flicker .7s infinite alternate}
+@keyframes flicker{to{transform:scale(.85) rotate(5deg);opacity:.8}}
+.finalmark{font-size:40px;color:var(--gold);text-shadow:0 0 30px #d8ad55}
+.heart{position:fixed;bottom:-30px;color:#d6ad61;pointer-events:none;z-index:20;animation:rise 6s linear forwards;opacity:.75}
+@keyframes rise{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+.footerline{font:10px Arial,sans-serif;letter-spacing:.18em;color:#87785f;margin-top:25px}
+@media(max-width:520px){.topbar{height:55px;padding:0 14px}main{padding:14px 14px 20px}.scene{max-height:calc(100svh - 85px)}.gift-grid{gap:10px}.gift{min-height:130px}.gift .emoji{font-size:31px}.modalbox{padding:25px 18px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.brand-note{opacity:.8}
+.topbar{border-bottom:0;box-shadow:none}
+.scene{padding:clamp(4px,1vw,12px);animation:sceneIn .85s cubic-bezier(.2,.75,.2,1) both}
+.frame,.gift,.btn,.modalbox{backdrop-filter:blur(10px)}
+.gift{isolation:isolate}
+.gift:before{content:"";position:absolute;inset:-60% -30%;z-index:-1;background:linear-gradient(110deg,transparent 35%,#fff2 50%,transparent 65%);transform:translateX(-100%) rotate(12deg);transition:transform .8s}
+.gift:hover:before{transform:translateX(100%) rotate(12deg)}
+.gamepanel{max-width:560px;margin:20px auto;padding:20px;border:1px solid #c49b5555;border-radius:22px;background:#17130eaa}
+.game-stats{font:13px Arial,sans-serif;color:#e9d6ae;margin-bottom:12px}
+.heart-arena{height:240px;position:relative;overflow:hidden;border:1px dashed #b58a4c88;border-radius:16px;background:radial-gradient(circle at center,#3a2a1744,transparent 70%);display:flex;align-items:center;justify-content:center;flex-direction:column}
+.catch-heart{position:absolute;border:0;background:transparent;color:#f6d88d;font-size:32px;cursor:pointer;filter:drop-shadow(0 0 10px #e2bd72);animation:heartPulse 1s infinite alternate}
+.catch-heart:disabled{opacity:.45;transform:scale(1.3)}
+@keyframes heartPulse{to{transform:scale(1.22) rotate(8deg)}}
+.memory-board{display:grid;grid-template-columns:repeat(4,minmax(55px,90px));gap:10px;justify-content:center;margin:22px auto}
+.memory-card{height:85px;border:1px solid #b58a4c99;border-radius:15px;background:linear-gradient(145deg,#382a17,#100d09);color:#f5d995;font-size:28px;cursor:pointer;box-shadow:0 8px 20px #0006;transition:.3s}
+.memory-card.flipped,.memory-card.matched{background:linear-gradient(145deg,#6a4b23,#25190d);transform:rotateY(180deg)}
+.memory-card.matched{border-color:#f5d995;opacity:.7}
+.winmark{font-size:54px;filter:drop-shadow(0 0 18px #e2bd72);animation:winPop .7s both}
+@keyframes winPop{from{transform:scale(.2) rotate(-25deg);opacity:0}to{transform:scale(1);opacity:1}}
+.ambient-heart{position:fixed;bottom:-40px;z-index:0;pointer-events:none;color:#e2bd7244;font-size:20px;animation:rise 14s linear forwards}
+.btn:disabled{opacity:.5;cursor:default;transform:none}
+@media(max-width:520px){.brand{font-size:8px;letter-spacing:.14em}.brand-note{font-size:8px}.memory-card{height:70px}.heart-arena{height:210px}}
+
+/* Premium interactions and reward presentation */
+.navrow{padding-top:12px;border-top:1px solid #d6b36a16;max-width:420px}
+.reward-stage{padding:12px 4px 4px;perspective:900px}
+.reward-box{width:142px;height:118px;margin:12px auto 24px;position:relative;cursor:pointer;filter:drop-shadow(0 18px 24px #0009);animation:giftFloat 2.4s ease-in-out infinite}
+.reward-box .lid{position:absolute;left:-7px;top:0;width:156px;height:30px;border:1px solid #ffe6a5;border-radius:7px;background:linear-gradient(135deg,#ffe5a0,#bd8436);z-index:3;transform-origin:8% 90%;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.reward-box .base{position:absolute;left:8px;top:25px;width:126px;height:91px;border:1px solid #f4d18a;border-radius:4px 4px 12px 12px;background:linear-gradient(110deg,#9a2228,#5b1019 55%,#a52c32)}
+.reward-box .ribbon{position:absolute;z-index:4;left:61px;top:0;width:20px;height:116px;background:linear-gradient(90deg,#f9e6aa,#b98b43,#f8df9a)}
+.reward-box .bow{position:absolute;z-index:5;left:48px;top:-15px;width:48px;height:30px;border:7px solid #f4d58e;border-radius:50% 50% 8px 50%;transform:rotate(22deg)}
+.reward-box.opened .lid{transform:translate(-18px,-48px) rotate(-28deg)}
+.reward-box.opened{animation:none}
+@keyframes giftFloat{50%{transform:translateY(-8px) rotate(1deg)}}
+.reward-glow{font-size:42px;animation:winPop .65s both;filter:drop-shadow(0 0 18px #f4d58e)}
+.quiz-options{display:grid;gap:10px;max-width:480px;margin:22px auto}
+.quiz-option{width:100%;padding:14px 16px;border:1px solid #b58a4c88;border-radius:14px;background:linear-gradient(120deg,#2b2113,#100d09);color:#f8e8c5;text-align:left;cursor:pointer;transition:.25s}
+.quiz-option:active{transform:scale(.98)}
+.quiz-option:hover{border-color:#f5d995;transform:translateY(-2px)}
+.fingerprint{width:150px;height:150px;border:1px solid #d8b46a88;border-radius:50%;display:grid;place-items:center;margin:22px auto;background:radial-gradient(circle,#3c2b17,#100d09 70%);box-shadow:0 0 35px #d6a84b25;touch-action:none;user-select:none;color:#e9c77e;font-size:78px;cursor:pointer;position:relative}
+.fingerprint:after{content:"";position:absolute;inset:9px;border:1px dashed #d8b46a55;border-radius:50%}
+.fingerprint.scanning{animation:scanPulse .75s infinite alternate;box-shadow:0 0 45px #e2bd7280}
+@keyframes scanPulse{to{transform:scale(1.05);filter:brightness(1.5)}}
+.cake-celebration{animation:sceneIn .9s both}
+.birthday-banner{font-size:clamp(28px,7vw,48px);font-weight:bold;color:#ffe5a0;text-shadow:0 0 24px #ffcf63;animation:winPop .9s both}
+.choco{font-size:38px;border:1px solid #c99b65;border-radius:16px;background:linear-gradient(145deg,#38251a,#140d0a);padding:18px;cursor:pointer;transition:.25s}
+.choco:active{transform:scale(.9)}
+@media(max-width:520px){.btnrow.navrow .btn{font-size:12px;padding:8px 13px}.reward-box{transform:scale(.9)}}
+
+.fingerprint-pair{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:18px auto}
+.fingerprint-pair>div{display:flex;flex-direction:column;align-items:center;gap:8px;color:#e9d6ae;font:10px Arial,sans-serif;letter-spacing:.08em}
+.fingerprint-pair .fingerprint{width:128px;height:128px;margin:8px auto}
+.fp-lines{font-size:66px;display:block;line-height:1}
+.fingerprint.done{border-color:#f6e0a6;background:radial-gradient(circle,#5a421f,#100d09);box-shadow:0 0 32px #e2bd7280}
+.mini-game-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:420px;margin:20px auto}
+.mini-tile{min-height:86px;border:1px solid #b58a4c88;border-radius:16px;background:linear-gradient(145deg,#382a17,#100d09);color:#f5d995;font-size:28px;cursor:pointer;transition:.3s}
+.mini-tile.revealed{background:linear-gradient(145deg,#6a4b23,#25190d);transform:scale(1.04)}
+.tap-heart{font-size:58px;border:1px solid #c49b55;border-radius:50%;width:112px;height:112px;background:radial-gradient(circle,#62451e,#160f09);color:#ffe6a4;cursor:pointer;box-shadow:0 0 30px #d6a84b40;animation:heartPulse 1s infinite alternate}
+@media(max-width:520px){.fingerprint-pair{gap:10px}.fingerprint-pair .fingerprint{width:112px;height:112px}}
+
+
+.arcade-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;max-width:620px;margin:22px auto}
+.arcade-card{border:1px solid #b58a4c88;border-radius:16px;padding:15px 10px;background:linear-gradient(145deg,#2b2113,#100d09);color:#f8e8c5;cursor:pointer;min-height:100px;transition:.25s;box-shadow:0 10px 25px #0005}
+.arcade-card.game-locked{opacity:.42;filter:grayscale(.7);cursor:not-allowed}.arcade-card.game-done{border-color:#d8c07a;box-shadow:0 0 20px #d8b46a35}.arcade-card:disabled{transform:none}
+.arcade-card:hover{transform:translateY(-4px);border-color:#f5d995;box-shadow:0 12px 30px #b68a3b35}
+.arcade-card strong{display:block;font-size:15px;margin:6px 0}.arcade-card small{font:10px Arial,sans-serif;letter-spacing:.1em;color:#c9aa6c}
+.love-code{width:min(280px,90%);padding:16px;border-radius:14px;border:1px solid #c49b55;background:#100d09;color:#ffe8b3;text-align:center;font-size:24px;letter-spacing:.35em;margin:14px auto}
+.quiz-progress{font:11px Arial,sans-serif;letter-spacing:.12em;color:#d8b46a;margin:10px}
+@media(max-width:520px){.arcade-grid{gap:8px}.arcade-card{min-height:90px;padding:12px 7px}}
+
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas><div class="ambient"></div>
+<div class="app">
+<header class="topbar"><div class="brand">A LITTLE WORLD FOR MY WIFE</div><div class="brand-note">MADE WITH LOVE ✦</div></header>
+
+<main><section class="scene" id="scene"></section></main>
+</div>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="modalbox" id="modalbox"></div></div>
+<script>
+const wife="Hakima Khatun",husband="SK Shayeemuddin";
+let step=0,opened=new Set(),candleLit=true,heartScore=0,heartTimer=null,heartTime=10,matched=[],firstCard=null,lockCards=false;
+const giftData=[
+["একটি ভালোবাসার চিঠি","💌","প্রিয় হাকিমা, আমার জীবনসঙ্গিনী,\n\nসব অনুভূতি হয়তো শব্দে পুরোপুরি বলা যায় না। তবুও আজ তোমার জন্মদিনে বলতে চাই—তুমি আমার জীবনের ভীষণ আপন একজন মানুষ। তোমার হাসি, তোমার কথা, তোমার ছোট ছোট অভিমান—সবকিছুই আমার কাছে আলাদা এক অনুভূতি।\n\nআমি চাই তোমার প্রতিটি সকাল নতুন আশা নিয়ে আসুক। তোমার স্বপ্নগুলো পূরণ হোক, মন খারাপের দিনগুলো সহজ হয়ে যাক। জীবনের প্রতিটি পথে তোমার পাশে এমন একজন মানুষ হয়ে থাকতে চাই, যার কাছে তুমি নির্ভয়ে নিজের মনের কথা বলতে পারো।\n\nআমাদের সব দিন নিখুঁত হবে না, তবুও সম্মান, ধৈর্য আর বোঝাপড়া দিয়ে প্রতিটি দিনকে সুন্দর করে তুলতে চাই। নিজের যত্ন নিও, নিজের স্বপ্নকে ভালোবেসো।\n\nআমি তোমাকে অনেক ভালোবাসি, জান। জীবনের প্রতিটি পথে তোমার পাশে থাকতে চাই—সুখে, দুঃখে, হাসিতে আর কঠিন সময়ে। সারাজীবন তোমার হাতটা ধরে রাখতে চাই, আর প্রতিদিন কাজে-কথায় তোমাকে বুঝিয়ে দিতে চাই তুমি আমার কাছে কতটা আপন।\n\nশুভ জন্মদিন, আমার প্রিয় স্ত্রী।\n\nঅনেক ভালোবাসায়,\nতোমার স্বামী,\n"+husband],
+["একগুচ্ছ গোলাপ","🌹","প্রতিটি গোলাপের মতো তোমার জীবনেও ফুটে উঠুক নতুন আনন্দ। তোমার হাসি থাকুক অটুট, মন থাকুক শান্ত, আর প্রতিটি দিন হোক সুন্দর। এই গোলাপগুলো আমার মনের ভালোবাসার ছোট্ট প্রতীক। ❤️"],
+["তিনটি প্রতিশ্রুতি","🤍","১. তোমার কথা মন দিয়ে শুনব এবং তোমার মতামতকে সম্মান করব।\n\n২. শুধু আনন্দের দিনে নয়, কঠিন সময়েও তোমার পাশে থাকার চেষ্টা করব।\n\n৩. ভুল বোঝাবুঝি হলে নীরবতা নয়—কথা, ধৈর্য আর ভালোবাসা দিয়ে সমাধান খুঁজব।"],
+["একটি গোপন সারপ্রাইজ","🎁","এই উপহারের কোনো দাম নেই, কারণ এটি কোনো দোকানে পাওয়া যায় না। এটি আমার মনের কথা—তুমি আমার কাছে মূল্যবান। নিজের আলোয় উজ্জ্বল থেকো, নিজের স্বপ্নের দিকে এগিয়ে চলো।"],
+["তোমার জন্য একটি কবিতা","📜","তোমার হাসিতে সকাল নামে,\nনরম আলো জানালায়;\nতোমার ভালো থাকা চাই,\nপ্রতিটি দিন, প্রতিটি সময়।\n\nপথ যতই হোক অচেনা,\nস্বপ্ন থাকুক ডানায়;\nসম্মান আর ভালোবাসা\nথাকুক আমাদের ছায়ায়।"],
+["একটি স্মৃতির অ্যালবাম","📷","আমাদের ছোট ছোট মুহূর্তগুলোই একদিন সবচেয়ে সুন্দর স্মৃতি হয়ে উঠবে। সাধারণ দিনের গল্প, একসঙ্গে হাসি, একটু অভিমান, আবার মিটমাট—এসব দিয়েই তো সম্পর্কের রং তৈরি হয়। আরও অনেক সুন্দর স্মৃতি তৈরি হোক।"],
+["একটি তারাভরা রাত","🌙","রাতের আকাশের প্রতিটি তারার মতো তোমার জীবনে থাকুক অসংখ্য আশার আলো। অন্ধকার সময় এলে মনে রেখো, রাত যত গভীরই হোক—সকাল ঠিকই আসে।"],
+["একটি মিষ্টি প্রতিজ্ঞা","🍫","তোমার মন খারাপ হলে তোমার কথা শুনব। তুমি আনন্দে থাকলে তোমার সঙ্গে আনন্দ ভাগ করব। আর ব্যস্ততার মাঝেও মনে রাখব—সম্পর্ককে সুন্দর রাখতে সময় ও যত্ন দুটোই দরকার।"],
+["একটি দোয়া","🤲","আল্লাহ তোমাকে সুস্থতা, শান্তি, হালাল রিজিক, নেক হায়াত ও অফুরন্ত বরকত দান করুন। তোমার ভালো স্বপ্নগুলো পূরণ করুন এবং প্রতিটি বিপদ থেকে হেফাজত করুন। আমিন।"],
+["একটি সোনালি স্মৃতি","✨","আজকের দিনটি তোমার জন্য বিশেষ। কিন্তু তোমাকে উদ্‌যাপন করার জন্য শুধু একটি দিনের দরকার হয় না। প্রতিদিনই তোমার ভালো থাকা, সম্মান আর হাসি গুরুত্বপূর্ণ।"],
+["একটি ছোট্ট গান","🎶","তোমার দিনগুলো সুরে ভরে উঠুক। মন খারাপের সুর বদলে যাক আশার সুরে। জীবনের প্রতিটি অধ্যায়ে খুঁজে পাও আনন্দ, শান্তি আর নতুন স্বপ্ন।"],
+["শেষ উপহার—আমার ভালোবাসা","💝","সব উপহারের শেষে একটি কথাই থেকে যায়—আমি চাই আমাদের সম্পর্ক ভালোবাসার পাশাপাশি বন্ধুত্ব, সম্মান, বিশ্বাস আর বোঝাপড়ায় ভরে উঠুক। তোমার পাশে থেকে জীবনকে সুন্দর করে তুলতে চাই।"]
+];
+const gameCatalog=[
+ {key:'heart',title:'Heart Catch',sub:'হৃদয় ধরার খেলা',icon:'💗',marker:'heartArena'},
+ {key:'memory',title:'Memory Match',sub:'জোড়া কার্ড মেলাও',icon:'🧩',marker:'memoryBoard'},
+ {key:'lucky',title:'Lucky Gift Boxes',sub:'চারটি বাক্সের সারপ্রাইজ',icon:'🎁',marker:'luckyResult'},
+ {key:'date',title:'Our Love Date Quiz',sub:'আমাদের শুরুর তারিখ',icon:'📅',marker:'আমাদের গল্পের শুরুর তারিখ?'},
+ {key:'class',title:'School Love Quiz',sub:'কোন ক্লাস থেকে শুরু',icon:'🎒',marker:'আমাদের প্রেম শুরু হয় কোন ক্লাস থেকে?'},
+ {key:'sweet',title:'Sweet Words Challenge',sub:'ভালোবাসার মিষ্টি উত্তর',icon:'💬',marker:'ভালোবাসার ছোট্ট চ্যালেঞ্জ'},
+ {key:'choco',title:'Chocolate Hunt',sub:'ছয়টি চকলেট সংগ্রহ করো',icon:'🍫',marker:'chocoCount'},
+ {key:'finger',title:'Love Fingerprint',sub:'দুটি ডিজিটাল ছাপ',icon:'🫶',marker:'fingerprintHis'},
+ {key:'year',title:'Our Love Year Quiz',sub:'আমাদের গল্পের সাল',icon:'🗓️',marker:'আমাদের গল্প কোন সালে শুরু?'},
+ {key:'month',title:'August Memory Quiz',sub:'আমাদের গল্পের মাস',icon:'🌻',marker:'কোন মাসে শুরু হয়েছিল আমাদের গল্প?'},
+ {key:'tap',title:'Heartbeat Challenge',sub:'হৃদয়ে দ্রুত ট্যাপ',icon:'💓',marker:'tapHeart'},
+ {key:'treasure',title:'Hidden Hearts',sub:'লুকানো হৃদয় খুঁজে নাও',icon:'🗝️',marker:'treasureGrid'},
+ {key:'quiz',title:'Three-Round Love Quiz',sub:'তিনটি স্মৃতির প্রশ্ন',icon:'💌',marker:'loveQuizQuestion'},
+ {key:'code',title:'Secret Love Code',sub:'গোপন তারিখের কোড',icon:'🔐',marker:'loveCodeInput'}
+];
+const completedGames=new Set();
+let resolvingGameKey=false;function gameKeyAtStep(index){if(resolvingGameKey)return null;resolvingGameKey=true;let html='';try{html=scenes[index]()}catch(e){}finally{resolvingGameKey=false}return gameCatalog.find(g=>html.includes(g.marker))?.key||null}
+function nextUnfinishedGame(){return gameCatalog.find(g=>!completedGames.has(g.key))||null}
+function gameStep(key){const marker=gameCatalog.find(g=>g.key===key)?.marker;if(!marker)return -1;return scenes.findIndex(fn=>{try{return fn().includes(marker)}catch(e){return false}})}
+function arcadeStep(){return scenes.findIndex(fn=>{try{return fn().includes('Our private little arcade')}catch(e){return false}})}
+function cakeStep(){return scenes.findIndex((fn,i)=>{try{return i>1&&fn().includes('cake-wrap')}catch(e){return false}})}
+function enterGame(key){const first=nextUnfinishedGame();if(completedGames.has(key)||first?.key===key){const idx=gameStep(key);if(idx>=0){step=idx;render();window.scrollTo({top:0,behavior:'smooth'});}}else{const note=document.getElementById('arcadeNotice');if(note)note.textContent='আগের খেলাটি জিতে নাও, তারপর পরের খেলাটি খুলবে। ❤️';}}
+function nextGame(){const next=nextUnfinishedGame();if(next){enterGame(next.key);return;}step=arcadeStep();render();window.scrollTo({top:0,behavior:'smooth'});}
+function renderArcadeState(){const first=nextUnfinishedGame();document.querySelectorAll('.arcade-card[data-game]').forEach(card=>{const key=card.dataset.game;const done=completedGames.has(key);const unlocked=done||first?.key===key;card.disabled=!unlocked;card.classList.toggle('game-locked',!unlocked);card.classList.toggle('game-done',done);const small=card.querySelector('small');if(small)small.textContent=done?'✓ সম্পূর্ণ • আবার খেলতে পারো':unlocked?'এখন খেলো':'আগের গেমের পর খুলবে';});const notice=document.getElementById('arcadeNotice');if(notice)notice.textContent=completedGames.size+'/'+gameCatalog.length+' টি গেম সম্পূর্ণ হয়েছে। '+(completedGames.size===gameCatalog.length?'সব গেম শেষ! এবার পরের অধ্যায়ে চলো।':'একটি করে গেম জিতে পরেরটি আনলক করো।');}
+function updateGameNav(){const box=document.getElementById('gameNav');if(!box)return;const key=gameKeyAtStep(step);if(!key)return;const done=completedGames.has(key),next=nextUnfinishedGame();box.innerHTML=`<div class="btnrow navrow"><button class="btn secondary" onclick="step=arcadeStep();render()">♡ গেমের পাতায় ফিরি</button>${done?`<button class="btn" onclick="nextGame()">${next?'পরের খেলায় এগিয়ে যাই →':'সব খেলা শেষ—পরের পাতায় চলো →'}</button>`:`<button class="btn" disabled style="opacity:.55;cursor:not-allowed">খেলাটি জিতলে পরেরটি খুলবে</button>`}</div><p class="hint">${completedGames.size} / ${gameCatalog.length} টি গেম সম্পূর্ণ</p>`;}
+
+const scenes=[
+()=>`<div class="kicker">A little surprise • 01 November 2026</div><div class="ornament">✦</div><h1>শুভ জন্মদিন,<br>আমার প্রিয় স্ত্রী</h1><div class="name">${wife}</div><div class="rule"></div><p>আজকের দিনটা শুধু তোমার জন্মদিন নয়।<br>আজ সেই মানুষটাকে উদ্‌যাপন করার দিন,<br>যে আমার জীবনের গল্পে ভীষণ আপন।</p><div class="btnrow"><button class="btn" onclick="next()">তোমার জন্য দরজা খুলে দিই? ✨</button></div><div class="hint">ধীরে ধীরে প্রতিটি সারপ্রাইজ উপভোগ করো…</div>`,
+()=>`<div class="kicker">A birthday celebration just for you</div><div class="ornament">🎉 ✨ 🎂 ✨ 🎉</div><h2>শুভ জন্মদিন, হাকিমা!</h2><p>দরজা খুলতেই তোমার জন্য ছোট্ট একটি জন্মদিনের উদ্‌যাপন। চোখ বন্ধ করে একটি ইচ্ছে চেয়ে নাও।</p><div class="cake-wrap"><div class="flame" id="introFlame"></div><div class="candle"></div><div class="cake"></div></div><button class="btn" id="introBlowBtn" onclick="blowIntroCandle()">মোমবাতি নিভিয়ে দাও 🎂</button><div id="introWish" style="display:none;color:#f3d99c;margin-top:20px"><div class="birthday-banner">🎉 HAPPY BIRTHDAY HAKIMA! 🎉</div><p>আল্লাহ তোমার জীবনকে শান্তি, সুস্থতা, বরকত আর সুন্দর মুহূর্তে ভরিয়ে দিন। তোমার প্রতিটি ভালো স্বপ্ন পূরণের পথ সহজ হোক। ❤️</p><button class="btn" onclick="next()">এবার পরের ধাপে যাই →</button></div>` ,
+()=>giftPage(0),
+()=>giftPage(1),
+()=>giftPage(2),
+()=>`<div class="kicker">A letter sealed with love</div><div class="finalmark">✉</div><h2>শুধু তোমার জন্য একটি চিঠি</h2><p>কিছু কথা মুখে বলা হয় না। তাই সেগুলোকে যত্ন করে এই চিঠির ভেতরে রেখে দিলাম।</p><div class="envelope" id="envelope" onclick="openLetter()"><div class="seal">♡</div></div><p class="hint">খামের ওপর আলতো করে স্পর্শ করো</p><div class="btnrow"><button class="btn secondary" onclick="openLetter()">চিঠিটি খুলে পড়ো</button><button class="btn" onclick="next()">পরের পাতা →</button></div>`,
+()=>`<div class="kicker">The little things</div><h2>তোমার মধ্যে যে সৌন্দর্য দেখি</h2><div class="frame"><p>তোমার হাসি—যা মন খারাপের দিনেও একটু আলো এনে দিতে পারে।</p><div class="rule"></div><p>তোমার ছোট ছোট অভিমান—যেগুলোর আড়ালেও থাকে আপন করে পাওয়ার ইচ্ছে।</p><div class="rule"></div><p>তোমার স্বপ্ন—যেগুলোকে আমি চাই তুমি সাহস করে ছুঁয়ে দেখো।</p><div class="rule"></div><p>আর তোমার নিজস্বতা—যার জন্য তুমি শুধুই তুমি।</p></div>${nav()}`,
+()=>`<div class="kicker">A promise to you</div><h2>আজ তোমাকে কয়েকটি কথা দিই</h2><div class="gift-grid"><div class="frame"><div class="ornament">♡</div><b>সম্মান</b><p>তোমার মতামত ও অনুভূতিকে গুরুত্ব দিতে চাই।</p></div><div class="frame"><div class="ornament">✧</div><b>যত্ন</b><p>কঠিন সময়েও পাশে থাকতে চাই।</p></div><div class="frame" style="grid-column:1/-1"><div class="ornament">∞</div><b>বোঝাপড়া</b><p>ভুল হলে কথা বলে একসঙ্গে ঠিক করতে চাই।</p></div></div>${nav()}`,
+()=>`<div class="kicker">A little game • win a surprise</div><h2>❤️ ভালোবাসার ঝরনা</h2><p>১০ সেকেন্ডে অন্তত ৭টি হৃদয় ধরতে পারলে তোমার জন্য খুলবে একটি বিশেষ উপহার!</p><div class="gamepanel"><div class="game-stats">ধরা হৃদয়: <b id="score">0</b>　 সময়: <b id="timer">10</b>s</div><div id="heartArena" class="heart-arena"><span>▶</span><p>খেলা শুরু করতে নিচের বোতামে চাপ দাও</p></div><button class="btn" id="heartStart" onclick="startHeartGame()">খেলা শুরু ❤️</button></div>${nav()}`,
+()=>`<div class="kicker">A little game • memory challenge</div><h2>জোড়া খুঁজে বের করো</h2><p>একই রকম চারটি জোড়া কার্ড খুঁজে পেলে জিতে যাবে আর খুলবে আরেকটি উপহার।</p><div id="memoryBoard" class="memory-board">${memoryCards()}</div><p id="memoryStatus" class="hint">কার্ডে ট্যাপ করে মিল খুঁজে নাও।</p>${nav()}`,
+()=>`<div class="kicker">A little game • lucky choice</div><h2>ভাগ্যের উপহার বাক্স</h2><p>চারটি বাক্সের মধ্যে একটি বেছে নাও। প্রতিটি বাক্সেই তোমার জন্য ভালোবাসার বার্তা আছে—একটিতে লুকিয়ে আছে বিশেষ বোনাস সারপ্রাইজ!</p><div class="gift-grid">${[1,2,3,4].map(i=>`<button class="gift" onclick="luckyBox(${i},this)"><span class="emoji">🎁</span><b>বাক্স ${i}</b><small>OPEN ME</small></button>`).join('')}</div><p id="luckyResult" class="hint"></p>${nav()}`,
+()=>`<div class="kicker">A little feast made with love</div><div class="ornament">🍽️ ✨ ❤️ ✨ 🍽️</div><h2>এবার তোমার পছন্দের খাবারের উৎসব!</h2><p>জন্মদিনের আনন্দটা এবার একটু জমিয়ে হোক—তোমার জন্য রইল মজার সব খাবারের ছোট্ট আয়োজন। ❤️</p><div class="food-feast" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:520px;margin:28px auto"><div class="frame" style="margin:0;padding:20px 10px"><div style="font-size:clamp(42px,10vw,64px)">🍛</div><b>বিরিয়ানি</b></div><div class="frame" style="margin:0;padding:20px 10px"><div style="font-size:clamp(42px,10vw,64px)">🥟</div><b>মোমো</b></div><div class="frame" style="margin:0;padding:20px 10px"><div style="font-size:clamp(42px,10vw,64px)">🥙</div><b>ফুচকা</b></div><div class="frame" style="margin:0;padding:20px 10px"><div style="font-size:clamp(42px,10vw,64px)">🍟</div><b>আরও মজার খাবার</b></div></div><p style="color:#f3d99c">আজকের দিনটা হোক ভালোবাসা, আনন্দ আর তোমার পছন্দের স্বাদে ভরা! ❤️</p>${nav()}`,
+()=>`<div class="kicker">A wish for your future</div><div class="finalmark">🌷</div><h2>তোমার আগামী দিনগুলো</h2><div class="frame"><p>তোমার প্রতিটি সকাল শুরু হোক আশায়, প্রতিটি বিকেল কাটুক প্রশান্তিতে, আর প্রতিটি রাত শেষ হোক কৃতজ্ঞতায়। নিজের স্বপ্নের প্রতি বিশ্বাস রেখো।</p><div class="rule"></div><p>জীবনের পথে যত নতুন অধ্যায় আসুক, তুমি যেন সাহস, ধৈর্য আর সুন্দর মন নিয়ে এগিয়ে যেতে পারো।</p></div>${nav()}`,
+()=>`<div class="kicker">A message just for you</div><h2>যদি কোনোদিন মন খারাপ হয়…</h2><p>মনে রেখো, তোমার অনুভূতির মূল্য আছে। সবসময় শক্ত থাকার দরকার নেই। কখনো বিশ্রাম নেবে, কখনো নিজের জন্য সময় রাখবে। তোমার হাসির মতো তোমার নীরবতাকেও সম্মান করা জরুরি।</p><div class="ornament">♡</div><p style="color:#f1d99f">তুমি যেমন, ঠিক তেমনভাবেই মূল্যবান।</p>${nav()}`,
+()=>`<div class="kicker">One last gift</div><h2>শেষ বাক্সে কী আছে?</h2><p>এটা কোনো বস্তু নয়। এটা এমন কিছু কথা, যা আমি চাই তুমি মনে রাখো।</p><button class="gift" style="width:min(260px,90%);margin:25px auto;min-height:170px" onclick="openFinalGift()"><span class="emoji">🎀</span><b>শেষ উপহার খুলে দেখো</b><small>OPEN YOUR FINAL GIFT</small></button>${nav()}`,
+()=>`<div class="kicker">Always with love</div><div class="finalmark">♡</div><h1 style="font-size:clamp(34px,7vw,58px)">তুমি আমার<br>প্রিয় মানুষ</h1><div class="name">${wife}</div><div class="rule"></div><p>জীবনের প্রতিটি নতুন অধ্যায়ে তোমার জন্য থাকুক আলো, শান্তি আর আনন্দ। সব দিন একরকম হবে না—তবুও চাই, আমরা যেন একে অপরকে বুঝতে শিখি, সম্মান করি, আর ভালোবাসাকে যত্নে রাখি।</p><div class="frame"><p style="color:#f3d99c;margin:0">শুভ জন্মদিন, আমার স্ত্রী।<br>তোমার জন্য রইল আমার অফুরন্ত ভালোবাসা।</p><div class="rule"></div><p style="margin:0">অনেক ভালোবাসায়,<br><b style="color:#f1d99f">${husband}</b></p></div><div class="btnrow"><button class="btn" onclick="restart()">আবার শুরু করো ↺</button></div><div class="footerline">MADE WITH LOVE • 01.11.2026</div>`
+,()=>`<div class="kicker">A little memory quiz</div><div class="ornament">📅</div><h2>আমাদের গল্পের শুরুর তারিখ?</h2><p>দেখি, আমাদের ভালোবাসার এই বিশেষ দিনটা তোমার মনে আছে কি না!</p><div class="quiz-options"><button class="quiz-option" onclick="answerQuiz('date','২৯ আগস্ট ২০২৩')">২৯ আগস্ট ২০২৩</button><button class="quiz-option" onclick="answerQuiz('date','১৪ ফেব্রুয়ারি ২০২৩')">১৪ ফেব্রুয়ারি ২০২৩</button><button class="quiz-option" onclick="answerQuiz('date','১ নভেম্বর ২০২৩')">১ নভেম্বর ২০২৩</button></div><p id="quizFeedback" class="hint"></p>${nav()}`
+,()=>`<div class="kicker">Our school days</div><div class="ornament">🎒</div><h2>আমাদের প্রেম শুরু হয় কোন ক্লাস থেকে?</h2><p>স্কুলের সেই দিনগুলো—একটু লজ্জা, একটু হাসি, আর অনেক স্মৃতি।</p><div class="quiz-options"><button class="quiz-option" onclick="answerQuiz('class','ক্লাস এইট')">ক্লাস এইট</button><button class="quiz-option" onclick="answerQuiz('class','ক্লাস টেন')">ক্লাস টেন</button><button class="quiz-option" onclick="answerQuiz('class','ক্লাস টুয়েলভ')">ক্লাস টুয়েলভ</button></div><p id="quizFeedback" class="hint"></p>${nav()}`
+,()=>`<div class="kicker">A playful love test</div><div class="ornament">💗</div><h2>ভালোবাসার ছোট্ট চ্যালেঞ্জ</h2><p>এই খেলায় জেতার নিয়ম খুব সহজ—তোমার প্রিয় মানুষটির জন্য একটা মিষ্টি কথা বেছে নাও।</p><div class="quiz-options"><button class="quiz-option" onclick="reward('তোমার মিষ্টি উত্তর','তোমার বেছে নেওয়া কথাটাই আজকের সেরা উত্তর। তোমার জন্য এক বাক্স ভার্চুয়াল চকলেট! 🍫')">তুমি আমার প্রিয় বন্ধু ❤️</button><button class="quiz-option" onclick="reward('তোমার মিষ্টি উত্তর','তোমার বেছে নেওয়া কথাটাই আজকের সেরা উত্তর। তোমার জন্য একগুচ্ছ গোলাপ! 🌹')">তুমি আমার নিরাপদ আশ্রয় 🌷</button><button class="quiz-option" onclick="reward('তোমার মিষ্টি উত্তর','তোমার বেছে নেওয়া কথাটাই আজকের সেরা উত্তর। তোমার জন্য এক আকাশ ভালোবাসা! ✨')">তুমি আমার প্রতিদিনের আনন্দ ✨</button></div>${nav()}`
+,()=>`<div class="kicker">Chocolate treasure hunt</div><div class="ornament">🍫</div><h2>চকলেট খুঁজে নাও!</h2><p>ছয়টি চকলেটের প্রতিটিতে ট্যাপ করো। সবগুলো সংগ্রহ করলে খুলবে তোমার মিষ্টি উপহার।</p><div class="gift-grid">${Array.from({length:6},()=>'<button class="choco">🍫</button>').join('')}</div><p>সংগ্রহ: <b id="chocoCount">0</b> / 6</p>${nav()}`
+,()=>`<div class="kicker">Two hearts • one playful fingerprint</div><div class="ornament">🫶</div><h2>আমাদের Love Fingerprint</h2><p>প্রথমে SK Shayeemuddin-এর ডিজিটাল ছাপ, তারপর হাকিমার ডিজিটাল ছাপ মিলিয়ে দাও। দুটো স্ক্যান সম্পূর্ণ হলেই খুলবে আমাদের Love Match Gift!</p><div class="fingerprint-pair"><div><button class="fingerprint" id="fingerprintHis" onclick="startFingerprint('his')"><span class="fp-lines">◎</span></button><b>SK SHAYEEMUDDIN</b></div><div><button class="fingerprint" id="fingerprintHers" onclick="startFingerprint('hers')"><span class="fp-lines">◎</span></button><b>HAKIMA KHATUN</b></div></div><p id="fingerprintText" class="hint">দুটি ডিজিটাল ফিঙ্গারপ্রিন্ট স্ক্যান করতে ট্যাপ করো</p><div id="fingerprintMatch" class="hint">০ / ২ স্ক্যান সম্পূর্ণ</div>${nav()}`
+,()=>`<div class="kicker">A promise in a little frame</div><div class="ornament">🕊️</div><h2>আমাদের সম্পর্কের তিনটি যত্ন</h2><div class="frame"><p>রাগ হলেও অসম্মান নয়।</p><div class="rule"></div><p>ব্যস্ততা থাকলেও খোঁজ নেওয়া।</p><div class="rule"></div><p>স্বপ্নের পথে একে অপরকে সাহস দেওয়া।</p></div>${nav()}`
+,()=>`<div class="kicker">A tiny love museum</div><div class="ornament">🏛️</div><h2>আমাদের গল্পের ছোট্ট জাদুঘর</h2><p>একটি তারিখ, একটি স্কুলজীবনের অধ্যায়, কিছু কথা, কিছু অভিমান—এসব মিলিয়েই আমাদের গল্প। আজ থেকে আরও অনেক সুন্দর স্মৃতি জমা হোক।</p><div class="frame"><div class="name">29 • 08 • 2023</div><p>একটি শুরুর দিন।</p></div>${nav()}`
+,()=>`<div class="kicker">A little note for you</div><div class="ornament">💌</div><h2>তোমাকে নিয়ে আমার ইচ্ছে</h2><p>তুমি নিজের স্বপ্নগুলো পূরণ করো, নিজের পরিচয়ে উজ্জ্বল হও। আমি চাই তোমার পাশে এমনভাবে থাকতে, যাতে তোমার স্বাধীনতা, আনন্দ আর আত্মবিশ্বাস আরও বেড়ে যায়।</p>${nav()}`
+,()=>`<div class="kicker">A bouquet for Hakima</div><div class="ornament">💐</div><h2>তোমার জন্য ফুলের তোড়া</h2><p>গোলাপের লাল, সাদা ফুলের শান্তি আর ছোট্ট বুনোফুলের সরলতা—সব মিলিয়ে তোমার জন্য এক কাল্পনিক তোড়া।</p><div class="winmark">🌹🌷🌼🌸</div>${nav()}`
+,()=>`<div class="kicker">A little chocolate date</div><div class="ornament">🍫</div><h2>মিষ্টি মুহূর্তের প্রতিশ্রুতি</h2><p>কোনো একদিন একসঙ্গে বসে চকলেট ভাগ করে খাব, গল্প করব, হাসব—এমন সাধারণ মুহূর্তগুলোই একদিন সবচেয়ে দামি স্মৃতি হবে।</p><div class="winmark">🍫🍫🍫</div>${nav()}`
+,()=>`<div class="kicker">A blessing for us</div><div class="ornament">🤲</div><h2>আমাদের জন্য একটি দোয়া</h2><p>আল্লাহ আমাদের দুজনকে ভালো মানুষ হওয়ার তৌফিক দিন, একে অপরের হক আদায় করার শক্তি দিন, সম্পর্কের মধ্যে রহমত, ধৈর্য ও বরকত দিন। আমিন।</p>${nav()}`
+,()=>`<div class="kicker">Our next chapter</div><div class="ornament">📖</div><h2>আগামী দিনের গল্প</h2><p>এই ওয়েবসাইটের পাতা শেষ হতে পারে, কিন্তু আমাদের গল্পের পাতা যেন প্রতিদিন নতুন করে লেখা হয়—সম্মান, বন্ধুত্ব, বিশ্বাস আর ভালোবাসা দিয়ে।</p>${nav()}`
+,()=>`<div class="kicker">A secret keepsake</div><div class="ornament">🔐</div><h2>একটি ছোট্ট স্মারক</h2><p>আজকের এই জন্মদিনের সারপ্রাইজটি মনে করিয়ে দিক—তোমাকে খুশি করার জন্য বড় কিছুর দরকার নেই; আন্তরিকতা আর যত্নই সবচেয়ে সুন্দর উপহার।</p><button class="gift" style="width:min(260px,90%);margin:20px auto" onclick="reward('তোমার স্মারক','এই ছোট্ট স্মারকটি তোমার জন্য—যত্নে রেখো, আর হাসতে ভুলো না। ❤️')"><span class="emoji">🎀</span><b>স্মারকটি খুলে দেখো</b><small>OPEN KEEPSAKE</small></button>${nav()}`
+,()=>`<div class="kicker">One more birthday wish</div><div class="ornament">🎂</div><h2>আরও একবার—শুভ জন্মদিন!</h2><p>তোমার নতুন বছর হোক সুস্থতা, শান্তি, আনন্দ আর সুন্দর অর্জনে ভরা। প্রতিটি দিন তোমার জন্য নতুন সম্ভাবনা নিয়ে আসুক।</p><div class="birthday-banner">HAPPY BIRTHDAY HAKIMA!</div>${nav()}`
+,()=>`<div class="kicker">The grand finale</div><div class="winmark">💝</div><h2>এই সারপ্রাইজের শেষ কথা</h2><p>সব গেম, উপহার, চিঠি আর সাজানো পাতার শেষে আমার চাওয়া একটাই—তুমি ভালো থেকো, নিজের মতো করে হাসো, আর জীবনের প্রতিটি সুন্দর মুহূর্ত উপভোগ করো।</p><div class="frame"><p style="color:#f3d99c;margin:0">অনেক ভালোবাসায়,<br><b>${husband}</b></p></div><div class="btnrow"><button class="btn secondary" onclick="restart()">আবার শুরু থেকে দেখো ↺</button></div>`
+
+];
+
+scenes.splice(scenes.length-1,0,
+()=>`<div class="kicker">A little more about our story</div><div class="ornament">🗓️</div><h2>আমাদের গল্প কোন সালে শুরু?</h2><p>তারিখটা মনে আছে—এবার শুধু সালটা বলো।</p><div class="quiz-options"><button class="quiz-option" onclick="answerQuiz('year','২০২৩')">২০২৩</button><button class="quiz-option" onclick="answerQuiz('year','২০২২')">২০২২</button><button class="quiz-option" onclick="answerQuiz('year','২০২৪')">২০২৪</button></div><p id="quizFeedback" class="hint"></p>${nav()}`,
+()=>`<div class="kicker">A month to remember</div><div class="ornament">🌻</div><h2>কোন মাসে শুরু হয়েছিল আমাদের গল্প?</h2><p>সেই বিশেষ দিনটি ছিল আগস্ট মাসে। দেখি, তুমি ঠিক মনে করতে পারো কি না!</p><div class="quiz-options"><button class="quiz-option" onclick="answerQuiz('month','আগস্ট')">আগস্ট</button><button class="quiz-option" onclick="answerQuiz('month','সেপ্টেম্বর')">সেপ্টেম্বর</button><button class="quiz-option" onclick="answerQuiz('month','জুলাই')">জুলাই</button></div><p id="quizFeedback" class="hint"></p>${nav()}`,
+()=>`<div class="kicker">A tiny heart challenge</div><div class="ornament">💓</div><h2>হৃদয়ের স্পন্দন ধরো!</h2><p>১২ সেকেন্ডের মধ্যে হৃদয়ে ১০ বার ট্যাপ করো। চ্যালেঞ্জ জিতলেই খুলবে একটি সারপ্রাইজ।</p><div class="gamepanel"><div class="game-stats">ট্যাপ: <b id="tapScore">0</b> / 10　সময়: <b id="tapTime">12</b>s</div><button class="tap-heart" id="tapHeart" onclick="tapLoveHeart()">♡</button><p id="tapStatus" class="hint">শুরু করতে হৃদয়ে ট্যাপ করো</p></div>${nav()}`,
+()=>`<div class="kicker">Hidden love treasure</div><div class="ornament">🗝️</div><h2>লুকানো হৃদয় খুঁজে নাও</h2><p>নয়টি ছোট্ট বাক্সের মধ্যে তিনটি বাক্সে লুকিয়ে আছে হৃদয়। তিনটি হৃদয় খুঁজে পেলেই জিতে যাবে!</p><div class="mini-game-grid" id="treasureGrid">${Array.from({length:9},(_,i)=>`<button class="mini-tile" data-index="${i}" onclick="findHiddenHeart(this)">🎁</button>`).join('')}</div><p id="treasureStatus" class="hint">পাওয়া হৃদয়: ০ / ৩</p>${nav()}`
+);
+
+
+// A visible game directory makes every interactive activity easy to find.
+scenes.splice(8,0,()=>`<div class="kicker">Our private little arcade</div><div class="ornament">🎮 💗</div><h2>চলো, একটু ভালোবাসার খেলায় মেতে উঠি!</h2><p>প্রতিটি খেলায় আছে আমাদের গল্পের স্মৃতি, ছোট্ট চ্যালেঞ্জ আর জিতে গেলে অ্যানিমেটেড উপহার। যেকোনো একটি বেছে নাও।</p><div class="arcade-grid">${gameCatalog.map(g=>`<button class="arcade-card" data-game="${g.key}" onclick="enterGame('${g.key}')">${g.icon}<strong>${g.title}</strong><small>আগের গেমের পর খুলবে</small></button>`).join('')}</div><p id="arcadeNotice" class="hint">একটি করে গেম জিতে পরেরটি আনলক করো। ❤️</p>${nav()}`);
+
+
+scenes.splice(scenes.length-1,0,
+()=>`<div class="kicker">A three-round love challenge</div><div class="ornament">💌</div><h2>তিন ধাপের Our Love Quiz</h2><p>আমাদের গল্প থেকে তিনটি প্রশ্ন। একটার পর একটা সঠিক উত্তর দিলে খুলবে বিশেষ Love Treasure Gift!</p><div class="gamepanel"><div class="quiz-progress" id="loveQuizProgress">ROUND 1 / 3</div><h2 id="loveQuizQuestion" style="font-size:22px">আমাদের গল্পের শুরুর তারিখ কী?</h2><div class="quiz-options" id="loveQuizOptions"><button class="quiz-option" onclick="loveQuizAnswer('২৯ আগস্ট ২০২৩')">২৯ আগস্ট ২০২৩</button><button class="quiz-option" onclick="loveQuizAnswer('৩০ আগস্ট ২০২৩')">৩০ আগস্ট ২০২৩</button><button class="quiz-option" onclick="loveQuizAnswer('১ সেপ্টেম্বর ২০২৩')">১ সেপ্টেম্বর ২০২৩</button></div><p id="loveQuizFeedback" class="hint">তিনটি প্রশ্নের উত্তর দাও। ❤️</p></div>${nav()}`,
+()=>`<div class="kicker">A secret only our hearts know</div><div class="ornament">🔐</div><h2>Secret Love Code</h2><p>আমাদের গল্পের শুরুর তারিখকে ছয় অঙ্কের কোডে লেখো। সঠিক কোড দিলে খুলবে একটি বিশেষ উপহার।</p><div class="frame"><div class="name">29 • 08 • 2023</div><input id="loveCodeInput" class="love-code" type="password" inputmode="numeric" maxlength="6" placeholder="••••••" aria-label="ছয় অঙ্কের গোপন কোড"><div class="btnrow"><button class="btn" onclick="unlockLoveCode()">আমাদের স্মৃতি যাচাই করো ❤️</button></div><p id="loveCodeFeedback" class="hint">ইঙ্গিত: দিন + মাস + বছরের শেষ দুই অঙ্ক</p></div>${nav()}`
+);
+
+
+function goToGamePage(key){enterGame(key);}
+const loveQuizRounds=[
+ {q:'আমাদের গল্পের শুরুর তারিখ কী?',a:['২৯ আগস্ট ২০২৩','৩০ আগস্ট ২০২৩','১ সেপ্টেম্বর ২০২৩'],correct:'২৯ আগস্ট ২০২৩'},
+ {q:'আমাদের প্রেমের শুরু কোন ক্লাস থেকে?',a:['ক্লাস এইট','ক্লাস টেন','ক্লাস টুয়েলভ'],correct:'ক্লাস টেন'},
+ {q:'আমাদের গল্প কোন সালে শুরু হয়?',a:['২০২২','২০২৩','২০২৪'],correct:'২০২৩'}
+];
+let loveQuizIndex=0;
+function loveQuizAnswer(choice){
+ const round=loveQuizRounds[loveQuizIndex],feedback=document.getElementById('loveQuizFeedback');
+ if(choice!==round.correct){feedback.textContent='একটু ভেবে আবার চেষ্টা করো, জান। তুমি পারবে! ❤️';feedback.style.color='#f1c58a';return;}
+ loveQuizIndex++;
+ if(loveQuizIndex>=loveQuizRounds.length){feedback.textContent='তিনটি উত্তরই সঠিক! তোমার স্মৃতি অসাধারণ!';reward('Our Love Quiz Champion!','তুমি আমাদের গল্পের তিনটি স্মৃতিই মনে রেখেছো। তোমার জন্য রইল একটি বিশেষ Love Treasure—ভার্চুয়াল গোলাপ, চকলেট আর সারাজীবনের ভালোবাসা! 🌹🍫💝');return;}
+ document.getElementById('loveQuizProgress').textContent='ROUND '+(loveQuizIndex+1)+' / 3';
+ document.getElementById('loveQuizQuestion').textContent=loveQuizRounds[loveQuizIndex].q;
+ document.getElementById('loveQuizOptions').innerHTML=loveQuizRounds[loveQuizIndex].a.map(a=>`<button class="quiz-option" onclick="loveQuizAnswer('${a}')">${a}</button>`).join('');
+ feedback.textContent='একটি সঠিক! এবার পরের প্রশ্ন… ❤️';feedback.style.color='#e9d6ae';
+}
+function unlockLoveCode(){
+ const input=document.getElementById('loveCodeInput'),feedback=document.getElementById('loveCodeFeedback');if(!input||!feedback)return;
+ if(input.value.replace(/\D/g,'')==='290823'){feedback.textContent='স্মৃতি মিলে গেছে! গোপন উপহার তোমার জন্য খুলছে… 💝';feedback.style.color='#f3d99c';reward('Secret Love Code Unlocked!','সঠিক কোড! ২৯ আগস্ট ২০২৩—আমাদের গল্পের সেই আপন শুরুর স্মৃতি তুমি মনে রেখেছো। তোমার জন্য রইল একটি গোল্ডেন গিফট, গোলাপ আর চকলেট! 🌹🍫');}
+ else{feedback.textContent='কোডটি মেলেনি। ইঙ্গিতটা আবার দেখো: ২৯ + ০৮ + ২৩। ❤️';feedback.style.color='#f1c58a';input.focus();}
+}
+
+function nav(){const key=gameKeyAtStep(step);if(key)return `<div id="gameNav" class="btnrow navrow"></div>`;if(step===8){const allDone=completedGames.size===gameCatalog.length;return `<div class="btnrow navrow"><button class="btn secondary" onclick="prev()">♡ আগের স্মৃতিতে ফিরি</button>${allDone?`<button class="btn" onclick="goToBirthdayCake()">আগে যাও →</button>`:`<button class="btn" disabled style="opacity:.55;cursor:not-allowed">সব গেম শেষ হলে পরের পাতা খুলবে</button>`}</div>`;}return `<div class="btnrow navrow"><button class="btn secondary" onclick="prev()">← একটু পেছনে ফিরি</button><button class="btn" onclick="next()">আরেকটু এগিয়ে যাই →</button></div>`}
+function giftPage(offset){return `<div class="kicker">A little box of happiness</div><h2>তোমার জন্য আরও কিছু উপহার</h2><p>প্রতিটি উপহার খুললে পাবে আমার মনের একেকটি কথা।</p><div class="gift-grid">${giftData.slice(offset*4,offset*4+4).map((g,i)=>gift(offset*4+i,g[1],g[0])).join('')}</div>${nav()}`}
+function gift(id,emoji,title){return `<button class="gift ${opened.has(id)?"opened":""}" onclick="openGift(${id})"><span class="emoji">${emoji}</span><b>${title}</b><small>OPEN YOUR GIFT</small></button>`}
+function goToBirthdayCake(){const i=scenes.findIndex(fn=>{try{return fn().includes('A little feast made with love')}catch(e){return false}});if(i>=0){step=i;render();window.scrollTo({top:0,behavior:'smooth'});return;}const fallback=cakeStep();if(fallback>=0){step=fallback;render();window.scrollTo({top:0,behavior:'smooth'});}}
+function render(){document.getElementById('scene').innerHTML=scenes[step]();renderArcadeState();if(document.getElementById('gameNav'))updateGameNav();if(document.getElementById('loveQuizQuestion')){loveQuizIndex=0;const q=loveQuizRounds[0];document.getElementById('loveQuizProgress').textContent='ROUND 1 / 3';document.getElementById('loveQuizQuestion').textContent=q.q;document.getElementById('loveQuizOptions').innerHTML=q.a.map(a=>`<button class=\"quiz-option\" onclick=\"loveQuizAnswer('${a}')\">${a}</button>`).join('');document.getElementById('loveQuizFeedback').textContent='তিনটি প্রশ্নের উত্তর দাও। ❤️';}if(document.getElementById('memoryBoard'))setupMemory();if(document.querySelector('.choco'))collectChocolates();if(document.getElementById('treasureGrid'))setupTreasure();if(document.getElementById('fingerprintHis')){fingerprintScans=new Set(['his']);document.getElementById('fingerprintHis').classList.add('done');document.getElementById('fingerprintHers').classList.remove('done');document.getElementById('fingerprintHis').innerHTML='<span class="fp-lines">✓</span>';document.getElementById('fingerprintHers').innerHTML='<span class="fp-lines">◎</span>';document.getElementById('fingerprintMatch').textContent='১ / ২ স্ক্যান সম্পূর্ণ';document.getElementById('fingerprintText').textContent='SK Shayeemuddin-এর ডিজিটাল ফিঙ্গারপ্রিন্ট আগে থেকেই নিবন্ধিত। এবার হাকিমার ছাপ দাও। ❤️'}if(document.getElementById('tapHeart')){clearInterval(tapTimer);tapTimer=null;tapScore=0;tapTime=12;const b=document.getElementById('tapHeart');b.disabled=false;b.textContent='♡'}}
+function next(){if(step<scenes.length-1){step++;render();burst(10);window.scrollTo({top:0,behavior:'smooth'})}}
+function prev(){if(step>0){step--;render();window.scrollTo({top:0,behavior:'smooth'})}}
+function restart(){step=0;opened.clear();completedGames.clear();clearInterval(heartTimer);clearInterval(tapTimer);tapTimer=null;render();window.scrollTo({top:0,behavior:'smooth'})}
+function openGift(id){opened.add(id);let d=giftData[id];document.getElementById('modalbox').innerHTML=`<div class="kicker">A gift opened just for you</div><div class="ornament">${d[1]}</div><h2>${d[0]}</h2><div class="rule"></div><div class="lettertext">${escapeHTML(d[2])}</div><button class="btn close" onclick="closeModal()">ভালোবাসা রেখে দিলাম ❤️</button>`;showModal();if(step>=2&&step<=4)renderGiftState();burst(16)}
+function renderGiftState(){let y=document.getElementById('scene').scrollY;if(step>=2&&step<=4)render()}
+function escapeHTML(t){return t.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
+function openLetter(){document.getElementById('envelope')?.classList.add('open');document.getElementById('modalbox').innerHTML=`<div class="kicker">A letter from your husband</div><div class="ornament">✉</div><h2>প্রিয় হাকিমা, আমার জীবনসঙ্গিনী</h2><div class="rule"></div><div class="lettertext">${escapeHTML(`প্রিয় হাকিমা,
+
+আজকের এই চিঠিটা উপহারের বাক্সের চিঠির মতো নয়। এখানে আমি কোনো প্রতিশ্রুতির তালিকা লিখতে আসিনি—শুধু তোমার সঙ্গে কাটানো আগামী দিনগুলোর জন্য আমার মনের একটা নরম ইচ্ছে লিখছি।
+
+কখনো খুব সাধারণ একটা বিকেলে একসঙ্গে চা খেতে চাই, কখনো কোনো কারণ ছাড়াই তোমাকে হাসাতে চাই। তোমার ক্লান্ত দিনের শেষে এমন একজন হতে চাই, যার কাছে ফিরে এসে তুমি নিশ্চিন্তে নিজের কথা বলতে পারো।
+
+আমাদের গল্পটা ২০২৩ সালের ২৯ আগস্ট থেকে শুরু—আর আমি চাই, প্রতিটি নতুন দিন সেই গল্পে নতুন সুন্দর পৃষ্ঠা যোগ করুক। আমাদের মধ্যে মতের অমিল হলেও যেন সম্মানটা অটুট থাকে, অভিমান হলেও কথা বলার দরজাটা বন্ধ না হয়।
+
+তোমার স্বপ্নগুলো তোমারই থাকুক, তোমার পরিচয় তোমার নিজের আলোয় উজ্জ্বল হোক। আমি শুধু পাশে থেকে তোমার সাফল্যে হাততালি দিতে চাই, আর কঠিন দিনে সাহস জোগাতে চাই।
+
+শুভ জন্মদিন, আমার প্রিয় স্ত্রী। আল্লাহ তোমাকে ভালো রাখুন, আমাদের সম্পর্কেও রহমত ও বরকত দিন।
+
+আমি তোমাকে অনেক ভালোবাসি, জান। আমি চাই সারা জীবন তোমার পাশে থাকতে, তোমার হাসির কারণ হতে, মন খারাপের দিনে তোমার ভরসা হতে। যত দিন সামনে আসবে, প্রতিদিন নতুন করে তোমাকে ভালোবাসা, সম্মান আর যত্ন দেওয়ার চেষ্টা করব।
+
+Your husband,
+${husband}`)}</div><button class="btn close" onclick="closeModal()">চিঠিটা হৃদয়ে রেখে দিলাম ❤️</button>`;showModal();burst(22)}
+function openFinalGift(){document.getElementById('modalbox').innerHTML=`<div class="kicker">Your secret gift</div><div class="ornament">🎁</div><h2>একটা কথা মনে রেখো</h2><p>তোমার মূল্য কোনো উপহার, কোনো দিন, কোনো পরিস্থিতি দিয়ে মাপা যায় না। তুমি যেমন, ঠিক তেমনভাবেই সম্মান ও ভালোবাসার যোগ্য।</p><div class="rule"></div><p style="color:#f1d99f">তোমার প্রতিটি আগামী দিন হোক আজকের চেয়েও সুন্দর।</p><button class="btn close" onclick="closeModal()">এই কথাটা মনে রাখব ❤️</button>`;showModal();burst(24)}
+function showModal(){document.getElementById('modal').classList.add('show')}
+function closeModal(){document.getElementById('modal').classList.remove('show');if(completedGames.size===gameCatalog.length&&gameKeyAtStep(step)){step=arcadeStep();render();window.scrollTo({top:0,behavior:'smooth'});return;}updateGameNav();renderArcadeState()}
+function blowCandle(){const f=document.getElementById('flame');if(f)f.style.display='none';const w=document.getElementById('wishtext');if(w)w.innerHTML='<div class="cake-celebration"><div class="birthday-banner">🎉 HAPPY BIRTHDAY! 🎂</div><p style="color:#ffe5a0">শুভ জন্মদিন, আমার প্রিয় হাকিমা!</p><p>আজকের দিনটা হোক হাসি, ভালোবাসা, চকলেট আর সুন্দর স্মৃতিতে ভরা। আল্লাহ তোমার প্রতিটি ভালো ইচ্ছে পূরণ করুন। ❤️</p></div>',w.style.display='block';burst(55);setTimeout(()=>burst(35),900)}
+function blowIntroCandle(){const f=document.getElementById('introFlame');if(f)f.style.display='none';const w=document.getElementById('introWish');if(w)w.style.display='block';const b=document.getElementById('introBlowBtn');if(b)b.style.display='none';burst(65);setTimeout(()=>burst(45),700);setTimeout(()=>burst(35),1400)}
+function startHeartGame(){clearInterval(heartTimer);heartScore=0;heartTime=10;document.getElementById('score').textContent=0;document.getElementById('timer').textContent=10;let a=document.getElementById('heartArena');a.innerHTML='';for(let i=0;i<12;i++){let b=document.createElement('button');b.className='catch-heart';b.textContent='♡';b.style.left=(4+Math.random()*82)+'%';b.style.top=(5+Math.random()*72)+'%';b.onclick=()=>{if(!b.disabled){b.disabled=true;b.textContent='♥';heartScore++;document.getElementById('score').textContent=heartScore;if(heartScore>=7)finishHeartGame(true)}};a.appendChild(b)}document.getElementById('heartStart').disabled=true;heartTimer=setInterval(()=>{heartTime--;document.getElementById('timer').textContent=heartTime;if(heartTime<=0)finishHeartGame(heartScore>=7)},1000)}
+function finishHeartGame(win){clearInterval(heartTimer);document.getElementById('heartStart').disabled=false;document.getElementById('heartArena').innerHTML=win?'<div class="winmark">🏆</div><p>ইয়েই! তুমি জিতে গেছো!</p>':'<p>আরেকবার চেষ্টা করো, তুমি পারবে! ❤️</p>';if(win)reward("হৃদয় জয়ের উপহার","তুমি ৭টি হৃদয় ধরেছো! তোমার জন্য রইল একটি বিশেষ বোনাস উপহার—একগুচ্ছ ভালোবাসা ও একটি মিষ্টি বার্তা। ❤️")}
+function memoryCards(){return ['🌙','🌹','💝','⭐','⭐','💝','🌹','🌙'].map((v,i)=>`<button class="memory-card" data-value="${v}" onclick="flipCard(this)"><span>✦</span></button>`).join('')}
+function setupMemory(){matched=[];firstCard=null;lockCards=false;document.querySelectorAll('.memory-card').forEach(c=>{c.classList.remove('flipped','matched');c.disabled=false})}
+function flipCard(card){if(lockCards||card.classList.contains('flipped')||card.classList.contains('matched'))return;card.classList.add('flipped');card.innerHTML=card.dataset.value;if(!firstCard){firstCard=card;return}let second=card;if(firstCard.dataset.value===second.dataset.value){firstCard.classList.add('matched');second.classList.add('matched');matched.push(firstCard.dataset.value);firstCard=null;if(matched.length===4){document.getElementById('memoryStatus').textContent='দারুণ! সব জোড়া মিলিয়ে জিতে গেছো!';reward("স্মৃতির খেলায় জয়","তুমি সবগুলো জোড়া খুঁজে পেয়েছো! তোমার জন্য রইল একটি বিশেষ উপহার। 💝")}else document.getElementById('memoryStatus').textContent='একটি জোড়া মিলেছে!';}else{lockCards=true;setTimeout(()=>{firstCard.classList.remove('flipped');second.classList.remove('flipped');firstCard.innerHTML='✦';second.innerHTML='✦';firstCard=null;lockCards=false},750)}}
+function luckyBox(n,el){document.querySelectorAll('#scene .gift').forEach(b=>b.disabled=true);el.classList.add('opened');const win=n===3;const msg=win?'জ্যাকপট! তুমি বিশেষ উপহার পেয়েছো! তোমার জন্য রইল গোলাপ, চকলেট আর একগুচ্ছ ভালোবাসা। 🎉🍫🌹':'এই বাক্সে আছে একরাশ শুভকামনা, ভালোবাসা আর দোয়া। তুমি আমার কাছে ভীষণ বিশেষ। ❤️';document.getElementById('luckyResult').textContent=win?'জ্যাকপট! বিশেষ উপহার পেয়েছো! 🎉':'তোমার বাক্সের সারপ্রাইজ খুলছে… ❤️';reward(win?'লাকি বক্স জ্যাকপট!':'তোমার জন্য ছোট্ট উপহার',msg)}
+function reward(title,msg){
+ const activeGame=gameKeyAtStep(step);if(activeGame){completedGames.add(activeGame);setTimeout(updateGameNav,0);}
+ document.getElementById('modalbox').innerHTML=`<div class="kicker">A special reward is yours</div><h2>${title}</h2><p>তোমার জন্য একটি উপহার এসেছে। বাক্সটি খুলে দেখো…</p><div class="reward-stage"><div class="reward-box" id="rewardBox" role="button" tabindex="0" aria-label="উপহার খুলুন" onclick="revealReward()"><div class="lid"></div><div class="base"></div><div class="ribbon"></div><div class="bow"></div></div></div><div id="rewardReveal" style="display:none"><div class="reward-glow">🎁 ✨ 💝</div><div class="rule"></div><div class="lettertext">${escapeHTML(msg)}</div><p style="color:#f3d99c">একগুচ্ছ চকলেট, গোলাপ আর অফুরন্ত ভালোবাসা তোমার জন্য! 🍫🌹</p><button class="btn close" onclick="closeModal()">আমার উপহার পেয়েছি ❤️</button></div><p class="hint" id="rewardHint">বাক্সে ট্যাপ করে উপহার খোলো</p>`;
+ showModal();burst(20);
+}
+function revealReward(){const box=document.getElementById('rewardBox');if(!box||box.classList.contains('opened'))return;box.classList.add('opened');setTimeout(()=>{document.getElementById('rewardReveal').style.display='block';document.getElementById('rewardHint').style.display='none';burst(30)},650)}
+
+function answerQuiz(kind,choice){
+ const configs={date:{correct:'২৯ আগস্ট ২০২৩',title:'আমাদের গল্পের তারিখ',msg:'একদম ঠিক! ২৯ আগস্ট ২০২৩—এই তারিখটা আমাদের গল্পের খুব আপন একটি শুরু। এই স্মৃতির জন্য তোমার উপহার: গোলাপ, চকলেট আর একটি ভালোবাসার নোট। 🌹🍫'},class:{correct:'ক্লাস টেন',title:'আমাদের স্কুলজীবনের গল্প',msg:'সঠিক উত্তর! আমাদের প্রেমের গল্পের শুরু ক্লাস টেন থেকে। পুরোনো সেই দিনগুলোর স্মৃতির জন্য তোমার বিশেষ উপহার—একটি মিষ্টি সারপ্রাইজ! 💝'},year:{correct:'২০২৩',title:'আমাদের গল্পের বছর',msg:'একদম ঠিক! ২০২৩ সালেই আমাদের গল্পের শুরু। তোমার স্মৃতির জন্য রইল গোলাপ আর চকলেটের একটি ভার্চুয়াল গিফট! 🌹🍫'},month:{correct:'আগস্ট',title:'আমাদের গল্পের মাস',msg:'একদম ঠিক! আগস্ট মাস—আমাদের গল্পের শুরুর মাস। তোমার জন্য রইল একটি মিষ্টি সারপ্রাইজ! 🍫💝'}};
+ const c=configs[kind];if(choice===c.correct){reward('সঠিক উত্তর! '+c.title,c.msg)}else{document.getElementById('quizFeedback').textContent='উফ! আরেকবার ভাবো, তুমি পারবে। ❤️';document.getElementById('quizFeedback').style.color='#f1c58a'}
+}
+let fingerprintScans=new Set(['his']);
+function startFingerprint(person){const id=person==='his'?'fingerprintHis':'fingerprintHers';const f=document.getElementById(id);if(!f||fingerprintScans.has(person)||f.classList.contains('scanning'))return;f.classList.add('scanning');f.innerHTML='<span class="fp-lines">◉</span>';document.getElementById('fingerprintText').textContent=(person==='his'?'SK Shayeemuddin-এর':'হাকিমার')+' ডিজিটাল ফিঙ্গারপ্রিন্ট স্ক্যান হচ্ছে…';setTimeout(()=>{f.classList.remove('scanning');f.classList.add('done');f.innerHTML='<span class="fp-lines">✓</span>';fingerprintScans.add(person);document.getElementById('fingerprintMatch').textContent=fingerprintScans.size+' / 2 স্ক্যান সম্পূর্ণ';if(fingerprintScans.size===2){document.getElementById('fingerprintText').textContent='দুটি ডিজিটাল ছাপই মিলেছে! Love Match Successful 💞';burst(24);setTimeout(()=>reward('Love Match Verified','SK Shayeemuddin ও হাকিমা—দুটি আলাদা নাম, কিন্তু একসঙ্গে তৈরি হয়েছে একটি সুন্দর গল্প। তোমাদের জন্য একটি ভার্চুয়াল চকোলেট হামপার, গোলাপ আর অফুরন্ত ভালোবাসা! 🍫🌹❤️'),500)}else{document.getElementById('fingerprintText').textContent='প্রথম স্ক্যান সম্পূর্ণ! এবার অন্যজনের ডিজিটাল ছাপ স্ক্যান করো। ❤️'}},1500)}
+function collectChocolates(){let n=0;document.querySelectorAll('.choco').forEach(b=>b.onclick=()=>{if(b.dataset.got)return;b.dataset.got='1';b.textContent='💖';n++;document.getElementById('chocoCount').textContent=n;if(n===6)reward('চকলেট কালেকশন সম্পূর্ণ!','ছয়টি মিষ্টি চকলেট সংগ্রহ করেছো! তোমার জন্য রইল একটি কল্পনার চকোলেট হামপার। 🍫🍫🍫')})}
+
+
+let tapScore=0,tapTime=12,tapTimer=null,treasureHearts=new Set(),treasureFound=0,treasureLocked=false;
+function tapLoveHeart(){const b=document.getElementById('tapHeart');if(!b)return;if(!tapTimer){tapScore=0;tapTime=12;document.getElementById('tapScore').textContent='0';document.getElementById('tapTime').textContent='12';document.getElementById('tapStatus').textContent='চালিয়ে যাও! তুমি পারবে ❤️';tapTimer=setInterval(()=>{tapTime--;const t=document.getElementById('tapTime');if(t)t.textContent=tapTime;if(tapTime<=0)finishTapGame(tapScore>=10)},1000)}tapScore++;document.getElementById('tapScore').textContent=tapScore;b.textContent=tapScore%2?'♥':'♡';if(tapScore>=10)finishTapGame(true)}
+function finishTapGame(win){clearInterval(tapTimer);tapTimer=null;const b=document.getElementById('tapHeart');if(b)b.disabled=!!win;const st=document.getElementById('tapStatus');if(st)st.textContent=win?'চ্যালেঞ্জ জিতেছো! তোমার জন্য উপহার আসছে…':'সময় শেষ! আবার চেষ্টা করো, প্রিয়।';if(win)reward('হৃদয়ের স্পন্দন জয়','তুমি ১২ সেকেন্ডে ১০ বার হৃদয়ে ট্যাপ করে জিতে গেছো! তোমার জন্য রইল একটি হৃদয়ভরা উপহার। 💗')}
+function setupTreasure(){treasureHearts=new Set();while(treasureHearts.size<3)treasureHearts.add(Math.floor(Math.random()*9));treasureFound=0;treasureLocked=false}
+function findHiddenHeart(btn){if(treasureLocked||btn.classList.contains('revealed'))return;const i=Number(btn.dataset.index);btn.classList.add('revealed');if(treasureHearts.has(i)){btn.textContent='💖';treasureFound++;}else btn.textContent='🌙';document.getElementById('treasureStatus').textContent='পাওয়া হৃদয়: '+treasureFound+' / ৩';if(treasureFound===3){treasureLocked=true;reward('লুকানো হৃদয় খুঁজে পেয়েছো!','তুমি তিনটি লুকানো হৃদয়ই খুঁজে পেয়েছো। তোমার জন্য রইল একটি বিশেষ গিফট বক্স, গোলাপ আর চকলেট! 💝🍫🌹')}}
+
+function burst(n){for(let i=0;i<n;i++)setTimeout(makeHeart,i*70)}
+function makeHeart(){let e=document.createElement('span');e.className='heart';e.textContent=['♡','✦','♥','✧','✨'][Math.floor(Math.random()*5)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(14+Math.random()*22)+'px';e.style.animationDuration=(4+Math.random()*4)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),8500)}
+setInterval(()=>{if(document.hidden)return;let e=document.createElement('span');e.className='ambient-heart';e.textContent=['♡','✧','✦'][Math.floor(Math.random()*3)];e.style.left=Math.random()*100+'vw';e.style.animationDuration=(9+Math.random()*8)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),18000)},1200);
+const canvas=document.getElementById('stars'),ctx=canvas.getContext('2d');let W,H,stars=[];
+function resize(){W=canvas.width=innerWidth*devicePixelRatio;H=canvas.height=innerHeight*devicePixelRatio;stars=Array.from({length:Math.min(150,Math.floor(innerWidth/3))},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+.3,a:Math.random()*.65+.12,phase:Math.random()*6}))}
+function draw(){ctx.clearRect(0,0,W,H);stars.forEach(s=>{s.phase+=.012;ctx.beginPath();ctx.arc(s.x,s.y,s.r*devicePixelRatio,0,Math.PI*2);ctx.fillStyle=`rgba(238,205,139,${s.a*(.65+.35*Math.sin(s.phase))})`;ctx.fill()});requestAnimationFrame(draw)}
+addEventListener('resize',resize);resize();draw();render();
+</script>
+</body>
+</html>
